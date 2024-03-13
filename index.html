@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJSU Impaction Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: 5px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #result {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: 5px solid black;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id = "header">SJSU Impaction Calculator</h1>
+    <form id="gpaForm" onsubmit="return validateForm()" >
+        <label for="grade">Major:</label>
+        <select id = "major">
+            <option value="" selected>[Select Major]</option>
+            <option value="Accounting">Accounting</option>
+            <option value="Aerospace Engineering">Aerospace Engineering</option>
+            <option value="Animation/Illustration">Animation/Illustration</option>
+            <option value="Applied Mathematics">Applied Mathematics</option>
+            <option value="Art">Art</option>
+            <option value="Aviation">Aviation</option>
+            <option value="Behavioral Science">Behavioral Science</option>
+            <option value="Biochemistry">Biochemistry</option>
+            <option value="Biomedical Engineering">Biomedical Engineering</option>
+            <option value="Business Administration">Business Administration</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Child and Adolescent Development">Child and Adolescent Development</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Communication Studies">Communication Studies</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Creative Arts">Creative Arts</option>
+            <option value="Design Studies">Design Studies</option>
+            <option value="Economics">Economics</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="English">English</option>
+            <option value="Environmental Studies">Environmental Studies</option>
+            <option value="Film and Theatre Arts">Film and Theatre Arts</option>
+            <option value="Finance">Finance</option>
+            <option value="Geography">Geography</option>
+            <option value="Global Studies">Global Studies</option>
+            <option value="Health Science">Health Science</option>
+            <option value="History">History</option>
+            <option value="Industrial Design">Industrial Design</option>
+            <option value="International Business">International Business</option>
+            <option value="Journalism">Journalism</option>
+            <option value="Justice Studies">Justice Studies</option>
+            <option value="Kinesiology">Kinesiology</option>
+            <option value="Liberal Studies">Liberal Studies</option>
+            <option value="Management Information Systems">Management Information Systems</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Materials Engineering">Materials Engineering</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Meteorology">Meteorology</option>
+            <option value="Music">Music</option>
+            <option value="Nursing">Nursing</option>
+            <option value="Nutrition Science">Nutrition Science</option>
+            <option value="Philosophy">Philosophy</option>
+            <option value="Physics">Physics</option>
+            <option value="Political Science">Political Science</option>
+            <option value="Psychology">Psychology</option>
+            <option value="Public Health">Public Health</option>
+            <option value="Radio-Television-Film">Radio-Television-Film</option>
+            <option value="Social Science">Social Science</option>
+            <option value="Sociology">Sociology</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Statistics">Statistics</option>
+            <option value="Theatre Arts">Theatre Arts</option>
+            <option value="Urban and Regional Planning">Urban and Regional Planning</option>
+          </select>
+          
+          
+
+        <label for="gpa">CSU GPA:</label>
+        <input type="number" id="gpa" name="gpa" min="0" max = "5" step = "0.1" required>
+        <div id = "engineering" hidden><label for="math">Weighted Math GPA:</label>
+        <input type="number" id="math" name="math" min="0" max = "5" step = "0.1"></div>
+        <label for="Local">Graduated from a Santa Clara County High School:</label>
+        <input type = "checkbox" id = "local">
+        <label for="waiver">Eligible for Cal State Apply application fee waiver:</label>
+        <input type = "checkbox" id = "waiver">
+        <label for="military">Military Status (Active Duty, Veteran, National Guard or Reserves):</label>
+        <input type = "checkbox" id = "military">
+        <label for="first">First Generation College Student:</label>
+        <input type = "checkbox" id = "first">
+        <input type="button" value="Calculate" onclick="calcScore()">
+    </form>
+    <br>
+    <div class="result" id="result" hidden></div>
+    <div class = "Info">
+        <h2>FAQs</h2>
+        <b>How do I calculate CSU GPA? What makes it different from normal GPA?</b>
+        <p>Calculate your <a href = "https://www.calstate.edu/apply/gpa-calculator">CSU GPA</a> here. CSU GPA uses your grades from 10th and 11th grades, awarding a maximum of 8 honors points for approved CSU honors and AP courses.</p>
+        <b>What does my impaction score mean?</b>
+        <p>Impaction scores are how SJSU determines who gets admitted. You can check out last year's minimum impaction scores <a href = "https://www.sjsu.edu/admissions/impaction/freshmen-impaction-results/index.php">here.</a> </p>
+    </div>
+    <script>
+        const selectElement = document.getElementById("major");
+        function validateForm() {
+            const major = document.getElementById("major");
+            const gpa = document.getElementById("gpa");
+            const math = document.getElementById("math");
+            
+            if (major.value === "" || gpa.value === "" || (!document.getElementById("engineering").hidden && math.value === "")) {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+            
+            return true;
+        }
+
+        var score = 0;
+        selectElement.addEventListener("change", (event) => {
+            if (selectElement.value.includes("Engineering")){
+                document.getElementById("engineering").hidden = false;
+            }
+            else{
+                document.getElementById("engineering").hidden = true;
+            }
+});
+    function calcScore(){
+        if (validateForm()){
+        let gpa = Number(document.getElementById("gpa").value);
+        let mathgpa = Number(document.getElementById("math").value);
+        let local = Number(document.getElementById("local").checked);
+        let waiver = Number(document.getElementById("waiver").checked);
+        let military = Number(document.getElementById("military").checked);
+        let first = Number(document.getElementById("first").checked);
+        if (document.getElementById("major").value.includes("Engineering")){
+            score = Math.round(gpa * 800 + mathgpa * 400 + local * 200 + waiver * 40 + military * 40 + first * 40);
+         }
+        else{
+            score = Math.round(gpa * 800 + local * 200 + waiver * 40 + military * 40 + first * 40);
+            }
+        document.getElementById('result').innerHTML = `
+                 <p>You have: ${score} impaction points</p>
+              `;
+        document.getElementById('result').hidden = false;
+    }}
+
+    </script>
+</body>
+</html>
