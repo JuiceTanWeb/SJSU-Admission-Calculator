@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             margin: 20px;
             text-align: center;
         }
+
         form {
             max-width: 400px;
             margin: 0 auto;
@@ -21,6 +23,7 @@
             cursor: pointer;
             width: 100%;
         }
+
         #result {
             max-width: 400px;
             margin: 0 auto;
@@ -32,10 +35,12 @@
             cursor: pointer;
             width: 100%;
         }
+
         label {
             display: block;
             margin-bottom: 5px;
         }
+
         input[type="number"] {
             width: 100%;
             padding: 8px;
@@ -44,6 +49,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         input[type="checkbox"] {
             width: 100%;
             padding: 8px;
@@ -52,6 +58,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         input[type="button"] {
             background-color: #4CAF50;
             color: white;
@@ -61,113 +68,208 @@
             cursor: pointer;
             width: 100%;
         }
+
         select {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;;
+            border: 1px solid #ccc;
+            ;
             border-radius: 4px;
             box-sizing: border-box;
             background-color: #ffffff;
         }
+
         input[type="button"]:hover {
             background-color: #45a049;
         }
+
         .result {
             margin-top: 20px;
             font-weight: bold;
         }
     </style>
 </head>
+
 <body>
-    <h1 id = "header">SJSU Impaction Calculator</h1>
-    <form id="gpaForm" onsubmit="return validateForm()" >
+    <h1 id="header">SJSU Impaction Calculator</h1>
+    <form id="gpaForm" onsubmit="return validateForm()">
         <label for="grade">Major:</label>
-        <select id = "major">
+        <select id="major">
             <option value="" selected>[Select Major]</option>
-            <option value="Accounting">Accounting</option>
+            <option value="Advertising">Advertising</option>
             <option value="Aerospace Engineering">Aerospace Engineering</option>
-            <option value="Animation/Illustration">Animation/Illustration</option>
-            <option value="Applied Mathematics">Applied Mathematics</option>
-            <option value="Art">Art</option>
+            <option value="African-American Studies">African-American Studies</option>
+            <option value="Animation and Illustration">Animation and Illustration</option>
+            <option value="Anthropology">Anthropology</option>
+            <option value="Applied Math - Applied & Computational">Applied Math - Applied & Computational</option>
+            <option value="Art - Digital Media Art">Art - Digital Media Art</option>
+            <option value="Art - Photography">Art - Photography</option>
+            <option value="Art - Pictorial Arts">Art - Pictorial Arts</option>
+            <option value="Art - Spatial Arts">Art - Spatial Arts</option>
+            <option value="Art - Studio - Prep for Teaching, SS">Art - Studio - Prep for Teaching, SS</option>
+            <option value="Art - Studio Practice">Art - Studio Practice</option>
+            <option value="Art History and Visual Culture">Art History and Visual Culture</option>
+            <option value="Asian American Studies">Asian American Studies</option>
             <option value="Aviation">Aviation</option>
             <option value="Behavioral Science">Behavioral Science</option>
-            <option value="Biochemistry">Biochemistry</option>
+            <option value="Biological Sciences">Biological Sciences</option>
+            <option value="Biological Sciences - Microbiology">Biological Sciences - Microbiology</option>
+            <option value="Biological Sciences - Molecular Biology">Biological Sciences - Molecular Biology</option>
+            <option value="Biological Sciences - Systems Physiology">Biological Sciences - Systems Physiology</option>
             <option value="Biomedical Engineering">Biomedical Engineering</option>
-            <option value="Business Administration">Business Administration</option>
+            <option value="Business Admin. - Accounting">Business Admin. - Accounting</option>
+            <option value="Business Admin. - Accounting Info Systems">Business Admin. - Accounting Info Systems</option>
+            <option value="Business Admin. - Business Analytics">Business Admin. - Business Analytics</option>
+            <option value="Business Admin. - Corporate Accounting Finance">Business Admin. - Corporate Accounting
+                Finance</option>
+            <option value="Business Admin. - Entrepreneurship">Business Admin. - Entrepreneurship</option>
+            <option value="Business Admin. - Finance">Business Admin. - Finance</option>
+            <option value="Business Admin. - Hospitality, Tourism & Event Mgmt">Business Admin. - Hospitality, Tourism &
+                Event Mgmt</option>
+            <option value="Business Admin. - Human Resource Mgmt">Business Admin. - Human Resource Mgmt</option>
+            <option value="Business Admin. - International Business">Business Admin. - International Business</option>
+            <option value="Business Admin. - Management">Business Admin. - Management</option>
+            <option value="Business Admin. - Management Info Systems">Business Admin. - Management Info Systems</option>
+            <option value="Business Admin. - Marketing">Business Admin. - Marketing</option>
+            <option value="Business Admin. - Operations & Supply Chain Mgmt">Business Admin. - Operations & Supply Chain
+                Mgmt</option>
             <option value="Chemical Engineering">Chemical Engineering</option>
-            <option value="Chemistry">Chemistry</option>
-            <option value="Child and Adolescent Development">Child and Adolescent Development</option>
+            <option value="Chemistry - Biochemistry">Chemistry - Biochemistry</option>
+            <option value="Chemistry, B.A.">Chemistry, B.A.</option>
+            <option value="Chemistry, B.S.">Chemistry, B.S.</option>
+            <option value="Chicana and Chicano Studies">Chicana and Chicano Studies</option>
+            <option value="Child & Adolescent Dev. - Prep for Teaching, MS">Child & Adolescent Dev. - Prep for Teaching,
+                MS</option>
+            <option value="Child & Adolescent Development">Child & Adolescent Development</option>
+            <option value="Chinese">Chinese</option>
             <option value="Civil Engineering">Civil Engineering</option>
             <option value="Communication Studies">Communication Studies</option>
+            <option value="Communicative Disorders & Sciences">Communicative Disorders & Sciences</option>
             <option value="Computer Engineering">Computer Engineering</option>
             <option value="Computer Science">Computer Science</option>
+            <option value="Computer Science & Linguistics">Computer Science & Linguistics</option>
             <option value="Creative Arts">Creative Arts</option>
+            <option value="Dance">Dance</option>
+            <option value="Data Science">Data Science</option>
             <option value="Design Studies">Design Studies</option>
-            <option value="Economics">Economics</option>
+            <option value="Earth Systems Science">Earth Systems Science</option>
+            <option value="Ecology & Evolution">Ecology & Evolution</option>
+            <option value="Economics, B.A.">Economics, B.A.</option>
+            <option value="Economics, B.S.">Economics, B.S.</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Engineering Tech - Computer Network System Mgmt.">Engineering Tech - Computer Network System
+                Mgmt.</option>
+            <option value="Engineering Tech - Manufacturing Systems">Engineering Tech - Manufacturing Systems</option>
             <option value="English">English</option>
-            <option value="Environmental Studies">Environmental Studies</option>
-            <option value="Film and Theatre Arts">Film and Theatre Arts</option>
-            <option value="Finance">Finance</option>
+            <option value="English - Professional and Technical Writing">English - Professional and Technical Writing
+            </option>
+            <option value="English - Creative Writing">English - Creative Writing</option>
+            <option value="English - Prep for Teaching, SS">English - Prep for Teaching, SS</option>
+            <option value="Environmental Studies, B.A.">Environmental Studies, B.A.</option>
+            <option value="Environmental Studies, B.S.">Environmental Studies, B.S.</option>
+            <option value="Environmental Studies - Prep for Teaching, MS">Environmental Studies - Prep for Teaching, MS
+            </option>
+            <option value="Forensic Science - Biology">Forensic Science - Biology</option>
+            <option value="Forensic Science - Chemistry">Forensic Science - Chemistry</option>
+            <option value="Forensic Science - Crime Scene Investigation">Forensic Science - Crime Scene Investigation
+            </option>
+            <option value="Forensic Science - Digital Evidence">Forensic Science - Digital Evidence</option>
+            <option value="French">French</option>
             <option value="Geography">Geography</option>
+            <option value="Geology">Geology</option>
             <option value="Global Studies">Global Studies</option>
-            <option value="Health Science">Health Science</option>
             <option value="History">History</option>
-            <option value="Industrial Design">Industrial Design</option>
-            <option value="International Business">International Business</option>
+            <option value="Humanities - American Studies">Humanities - American Studies</option>
+            <option value="Humanities - Liberal Arts">Humanities - Liberal Arts</option>
+            <option value="Humanities - Religious Studies">Humanities - Religious Studies</option>
+            <option value="Industrial & Systems Engineering">Industrial & Systems Engineering</option>
+            <option value="Interdisciplinary Engineering">Interdisciplinary Engineering</option>
+            <option value="Japanese">Japanese</option>
             <option value="Journalism">Journalism</option>
             <option value="Justice Studies">Justice Studies</option>
+            <option value="Justice Studies - Criminology">Justice Studies - Criminology</option>
             <option value="Kinesiology">Kinesiology</option>
-            <option value="Liberal Studies">Liberal Studies</option>
-            <option value="Management Information Systems">Management Information Systems</option>
-            <option value="Marketing">Marketing</option>
+            <option value="Kinesiology - Prep for Teaching, SS">Kinesiology - Prep for Teaching, SS</option>
+            <option value="Liberal Studies - Integrated Teacher Ed.">Liberal Studies - Integrated Teacher Ed.</option>
+            <option value="Liberal Studies - Integrated Teacher Ed. Spanish Bilingual">Liberal Studies - Integrated
+                Teacher Ed. Spanish Bilingual</option>
+            <option value="Liberal Studies - Prep for Teaching, MS">Liberal Studies - Prep for Teaching, MS</option>
+            <option value="Linguistics">Linguistics</option>
+            <option value="Marine Biology">Marine Biology</option>
             <option value="Materials Engineering">Materials Engineering</option>
             <option value="Mathematics">Mathematics</option>
+            <option value="Mathematics - Integrated Prep for Teaching">Mathematics - Integrated Prep for Teaching
+            </option>
             <option value="Mechanical Engineering">Mechanical Engineering</option>
             <option value="Meteorology">Meteorology</option>
-            <option value="Music">Music</option>
-            <option value="Nursing">Nursing</option>
-            <option value="Nutrition Science">Nutrition Science</option>
+            <option value="Meteorology - Climate Science">Meteorology - Climate Science</option>
+            <option value="Music, B.A.">Music, B.A.</option>
+            <option value="Music, B.M. - Composition">Music, B.M. - Composition</option>
+            <option value="Music, B.M. - Jazz Studies">Music, B.M. - Jazz Studies</option>
+            <option value="Music, B.M. - Music Education">Music, B.M. - Music Education</option>
+            <option value="Music, B.M. - Performance">Music, B.M. - Performance</option>
+            <option value="Nutritional Science - Applied Nutrition and Food Sci.">Nutritional Science - Applied
+                Nutrition and Food Sci.</option>
+            <option value="Nutritional Science - Dietetics">Nutritional Science - Dietetics</option>
+            <option value="Nutritional Science - Food Management">Nutritional Science - Food Management</option>
+            <option value="Organizational Studies">Organizational Studies</option>
+            <option value="Packaging">Packaging</option>
             <option value="Philosophy">Philosophy</option>
-            <option value="Physics">Physics</option>
+            <option value="Physics, B.A.">Physics, B.A.</option>
+            <option value="Physics, B.S.">Physics, B.S.</option>
+            <option value="Physics - Prep for Teaching">Physics - Prep for Teaching</option>
             <option value="Political Science">Political Science</option>
-            <option value="Psychology">Psychology</option>
+            <option value="Undeclared">Undeclared</option>
+            <option value="Undeclared - Pre-Nursing">Undeclared - Pre-Nursing</option>
+            <option value="Psychology, B.A.">Psychology, B.A.</option>
             <option value="Public Health">Public Health</option>
-            <option value="Radio-Television-Film">Radio-Television-Film</option>
-            <option value="Social Science">Social Science</option>
+            <option value="Public Health - Community Health Ed.">Public Health - Community Health Ed.</option>
+            <option value="Public Health - Population Data Sci.">Public Health - Population Data Sci.</option>
+            <option value="Public Relations">Public Relations</option>
+            <option value="Recreation">Recreation</option>
+            <option value="Recreation - Recreation Management">Recreation - Recreation Management</option>
+            <option value="Recreation - Recreation Therapy">Recreation - Recreation Therapy</option>
+            <option value="Social Science - Prep for Teaching, SS">Social Science - Prep for Teaching, SS</option>
+            <option value="Social Work">Social Work</option>
             <option value="Sociology">Sociology</option>
             <option value="Software Engineering">Software Engineering</option>
             <option value="Spanish">Spanish</option>
             <option value="Statistics">Statistics</option>
+            <option value="Television, Radio, Film">Television, Radio, Film</option>
             <option value="Theatre Arts">Theatre Arts</option>
-            <option value="Urban and Regional Planning">Urban and Regional Planning</option>
-          </select>
-          
-          
+            <option value="Women, Gender & Sexuality Studies">Women, Gender & Sexuality Studies</option>
+        </select>
+
+
 
         <label for="gpa">CSU GPA:</label>
-        <input type="number" id="gpa" name="gpa" min="0" max = "5" step = "0.1" required>
-        <div id = "engineering" hidden><label for="math">Weighted Math GPA:</label>
-        <input type="number" id="math" name="math" min="0" max = "5" step = "0.1"></div>
+        <input type="number" id="gpa" name="gpa" min="0" max="5" step="0.1" required>
+        <div id="engineering" hidden><label for="math">Weighted Math GPA:</label>
+            <input type="number" id="math" name="math" min="0" max="5" step="0.1">
+        </div>
         <label for="Local">Graduated from a Santa Clara County High School:</label>
-        <input type = "checkbox" id = "local">
+        <input type="checkbox" id="local">
         <label for="waiver">Eligible for Cal State Apply application fee waiver:</label>
-        <input type = "checkbox" id = "waiver">
+        <input type="checkbox" id="waiver">
         <label for="military">Military Status (Active Duty, Veteran, National Guard or Reserves):</label>
-        <input type = "checkbox" id = "military">
+        <input type="checkbox" id="military">
         <label for="first">First Generation College Student:</label>
-        <input type = "checkbox" id = "first">
+        <input type="checkbox" id="first">
         <input type="button" value="Calculate" onclick="calcScore()">
     </form>
     <br>
     <div class="result" id="result" hidden></div>
-    <div class = "Info">
+    <div class="Info">
         <h2>FAQs</h2>
         <b>How do I calculate CSU GPA? What makes it different from normal GPA?</b>
-        <p>Calculate your <a href = "https://www.calstate.edu/apply/gpa-calculator">CSU GPA</a> here. CSU GPA uses your grades from 10th and 11th grades, awarding a maximum of 8 honors points for approved CSU honors and AP courses.</p>
+        <p>Calculate your <a href="https://www.calstate.edu/apply/gpa-calculator">CSU GPA</a> here. CSU GPA uses your
+            grades from 10th and 11th grades, awarding a maximum of 8 honors points for approved CSU honors and AP
+            courses.</p>
         <b>What does my impaction score mean?</b>
-        <p>Impaction scores are how SJSU determines who gets admitted. You can check out last year's minimum impaction scores <a href = "https://www.sjsu.edu/admissions/impaction/freshmen-impaction-results/index.php">here.</a> </p>
+        <p>Impaction scores are how SJSU determines who gets admitted. You can check out last year's minimum impaction
+            scores <a href="https://www.sjsu.edu/admissions/impaction/freshmen-impaction-results/index.php">here.</a>
+        </p>
     </div>
     <script>
         const selectElement = document.getElementById("major");
@@ -175,44 +277,329 @@
             const major = document.getElementById("major");
             const gpa = document.getElementById("gpa");
             const math = document.getElementById("math");
-            
+
             if (major.value === "" || gpa.value === "" || (!document.getElementById("engineering").hidden && math.value === "")) {
                 alert("Please fill out all required fields.");
                 return false;
             }
-            
+
             return true;
         }
 
         var score = 0;
         selectElement.addEventListener("change", (event) => {
-            if (selectElement.value.includes("Engineering")){
+            if (selectElement.value.includes("Engineering") || selectElement.value == "Aviation") {
                 document.getElementById("engineering").hidden = false;
             }
-            else{
+            else {
                 document.getElementById("engineering").hidden = true;
             }
-});
-    function calcScore(){
-        if (validateForm()){
-        let gpa = Number(document.getElementById("gpa").value);
-        let mathgpa = Number(document.getElementById("math").value);
-        let local = Number(document.getElementById("local").checked);
-        let waiver = Number(document.getElementById("waiver").checked);
-        let military = Number(document.getElementById("military").checked);
-        let first = Number(document.getElementById("first").checked);
-        if (document.getElementById("major").value.includes("Engineering")){
-            score = Math.round(gpa * 800 + mathgpa * 400 + local * 200 + waiver * 40 + military * 40 + first * 40);
-         }
-        else{
-            score = Math.round(gpa * 800 + local * 200 + waiver * 40 + military * 40 + first * 40);
-            }
-        document.getElementById('result').innerHTML = `
+        });
+        function calcScore() {
+            if (validateForm()) {
+                let gpa = Number(document.getElementById("gpa").value);
+                let mathgpa = Number(document.getElementById("math").value);
+                let local = Number(document.getElementById("local").checked);
+                let waiver = Number(document.getElementById("waiver").checked);
+                let military = Number(document.getElementById("military").checked);
+                let first = Number(document.getElementById("first").checked);
+                const major = document.getElementById("major").value;
+                if (document.getElementById("major").value.includes("Engineering") || document.getElementById("major").value == "Aviation") {
+                    score = Math.round(gpa * 800 + mathgpa * 400 + local * 200 + waiver * 40 + military * 40 + first * 40);
+                }
+                else {
+                    score = Math.round(gpa * 800 + local * 200 + waiver * 40 + military * 40 + first * 40);
+                }
+                if (get2024Impaction(major) > score + 200) {
+                    document.getElementById('result').innerHTML = `
                  <p>You have: ${score} impaction points</p>
-              `;
-        document.getElementById('result').hidden = false;
-    }}
-
+                 <p>Based on 2024's impaction index of ${get2024Impaction(major)} for the ${major} major, it is unlikely you will be accepted.</p>
+                 `;
+                    document.getElementById('result').hidden = false;
+                }
+                else if (score > get2024Impaction(major) + 200) {
+                    document.getElementById('result').innerHTML = `
+                 <p>You have: ${score} impaction points</p>
+                 <p>Based on 2024's impaction index of ${get2024Impaction(major)} for the ${major} major, it is very likely you will be accepted.</p>
+                 `;
+                    document.getElementById('result').hidden = false;
+                }
+                else {
+                    document.getElementById('result').innerHTML = `
+                 <p>You have: ${score} impaction points</p>
+                 <p>Based on 2024's impaction index of ${get2024Impaction(major)} for the ${major} major, you may or may not be accepted.</p>
+                 `;
+                    document.getElementById('result').hidden = false;
+                }
+            }
+        }
+        function get2024Impaction(major) {
+            switch (major) {
+                case "Advertising":
+                    return 2040;
+                case "Aerospace Engineering":
+                    return 4200;
+                case "African-American Studies":
+                    return 2080;
+                case "Animation and Illustration":
+                    return 3200;
+                case "Anthropology":
+                    return 2080;
+                case "Applied Math - Applied & Computational":
+                    return 2080;
+                case "Art - Digital Media Art":
+                    return 2000;
+                case "Art - Photography":
+                    return 2000;
+                case "Art - Pictorial Arts":
+                    return 2040;
+                case "Art - Spatial Arts":
+                    return 2040;
+                case "Art - Studio - Prep for Teaching, SS":
+                    return 2040;
+                case "Art - Studio Practice":
+                    return 2000;
+                case "Art History and Visual Culture":
+                    return 2040;
+                case "Asian American Studies":
+                    return 2000;
+                case "Aviation":
+                    return 3300;
+                case "Behavioral Science":
+                    return 2040;
+                case "Biological Sciences":
+                    return 2000;
+                case "Biological Sciences - Microbiology":
+                    return 2000;
+                case "Biological Sciences - Molecular Biology":
+                    return 2000;
+                case "Biological Sciences - Systems Physiology":
+                    return 2000;
+                case "Biomedical Engineering":
+                    return 3000;
+                case "Business Admin. - Accounting":
+                    return 2200;
+                case "Business Admin. - Accounting Info Systems":
+                    return 2080;
+                case "Business Admin. - Business Analytics":
+                    return 2000;
+                case "Business Admin. - Corporate Accounting Finance":
+                    return 2200;
+                case "Business Admin. - Entrepreneurship":
+                    return 2200;
+                case "Business Admin. - Finance":
+                    return 2800;
+                case "Business Admin. - Hospitality, Tourism & Event Mgmt":
+                    return 2080;
+                case "Business Admin. - Human Resource Mgmt":
+                    return 2120;
+                case "Business Admin. - International Business":
+                    return 2080;
+                case "Business Admin. - Management":
+                    return 2400;
+                case "Business Admin. - Management Info Systems":
+                    return 2200;
+                case "Business Admin. - Marketing":
+                    return 2400;
+                case "Business Admin. - Operations & Supply Chain Mgmt":
+                    return 2000;
+                case "Chemical Engineering":
+                    return 3000;
+                case "Chemistry - Biochemistry":
+                    return 2000;
+                case "Chemistry, B.A.":
+                    return 2000;
+                case "Chemistry, B.S.":
+                    return 2000;
+                case "Chicana and Chicano Studies":
+                    return 2080;
+                case "Child & Adolescent Dev. - Prep for Teaching, MS":
+                    return 2000;
+                case "Child & Adolescent Development":
+                    return 2000;
+                case "Chinese":
+                    return 2040;
+                case "Civil Engineering":
+                    return 3960;
+                case "Communication Studies":
+                    return 2000;
+                case "Communicative Disorders & Sciences":
+                    return 2000;
+                case "Computer Engineering":
+                    return 4680;
+                case "Computer Science":
+                    return 3440;
+                case "Computer Science & Linguistics":
+                    return 2080;
+                case "Creative Arts":
+                    return 2080;
+                case "Dance":
+                    return 2040;
+                case "Data Science":
+                    return 2920;
+                case "Design Studies":
+                    return 2000;
+                case "Earth Systems Science":
+                    return 2080;
+                case "Ecology & Evolution":
+                    return 2000;
+                case "Economics, B.A.":
+                    return 2040;
+                case "Economics, B.S.":
+                    return 2040;
+                case "Electrical Engineering":
+                    return 4440;
+                case "Engineering Tech - Computer Network System Mgmt.":
+                    return 3000;
+                case "Engineering Tech - Manufacturing Systems":
+                    return 3120;
+                case "English":
+                    return 2040;
+                case "English - Professional and Technical Writing":
+                    return 2040;
+                case "English - Creative Writing":
+                    return 2040;
+                case "English - Prep for Teaching, SS":
+                    return 2040;
+                case "Environmental Studies, B.A.":
+                    return 2080;
+                case "Environmental Studies, B.S.":
+                    return 2080;
+                case "Environmental Studies - Prep for Teaching, MS":
+                    return 2080;
+                case "Forensic Science - Biology":
+                    return 2080;
+                case "Forensic Science - Chemistry":
+                    return 2040;
+                case "Forensic Science - Crime Scene Investigation":
+                    return 2360;
+                case "Forensic Science - Digital Evidence":
+                    return 2080;
+                case "French":
+                    return 2040;
+                case "Geography":
+                    return 2000;
+                case "Geology":
+                    return 2080;
+                case "Global Studies":
+                    return 2040;
+                case "History":
+                    return 2000;
+                case "Humanities - American Studies":
+                    return 2040;
+                case "Humanities - Liberal Arts":
+                    return 2000;
+                case "Humanities - Religious Studies":
+                    return 2040;
+                case "Industrial & Systems Engineering":
+                    return 3120;
+                case "Interdisciplinary Engineering":
+                    return 3120;
+                case "Japanese":
+                    return 2040;
+                case "Journalism":
+                    return 2040;
+                case "Justice Studies":
+                    return 2080;
+                case "Justice Studies - Criminology":
+                    return 2040;
+                case "Kinesiology":
+                    return 2000;
+                case "Kinesiology - Prep for Teaching, SS":
+                    return 2080;
+                case "Liberal Studies - Integrated Teacher Ed.":
+                    return 2040;
+                case "Liberal Studies - Integrated Teacher Ed. Spanish Bilingual":
+                    return 2040;
+                case "Liberal Studies - Prep for Teaching, MS":
+                    return 2040;
+                case "Linguistics":
+                    return 2040;
+                case "Marine Biology":
+                    return 2000;
+                case "Materials Engineering":
+                    return 3120;
+                case "Mathematics":
+                    return 2040;
+                case "Mathematics - Integrated Prep for Teaching":
+                    return 2080;
+                case "Mechanical Engineering":
+                    return 4620;
+                case "Meteorology":
+                    return 2080;
+                case "Meteorology - Climate Science":
+                    return 2080;
+                case "Music, B.A.":
+                    return 2040;
+                case "Music, B.M. - Composition":
+                    return 2040;
+                case "Music, B.M. - Jazz Studies":
+                    return 2040;
+                case "Music, B.M. - Music Education":
+                    return 2040;
+                case "Music, B.M. - Performance":
+                    return 2040;
+                case "Nutritional Science - Applied Nutrition and Food Sci.":
+                    return 2080;
+                case "Nutritional Science - Dietetics":
+                    return 2400;
+                case "Nutritional Science - Food Management":
+                    return 2080;
+                case "Organizational Studies":
+                    return 2000;
+                case "Packaging":
+                    return 2080;
+                case "Philosophy":
+                    return 2040;
+                case "Physics, B.A.":
+                    return 2080;
+                case "Physics, B.S.":
+                    return 2080;
+                case "Physics - Prep for Teaching":
+                    return 2080;
+                case "Political Science":
+                    return 2000;
+                case "Undeclared - Pre-Nursing":
+                    return 3160;
+                case "Psychology, B.A.":
+                    return 2520;
+                case "Public Health":
+                    return 2000;
+                case "Public Health - Community Health Ed.":
+                    return 2040;
+                case "Public Health - Population Data Sci.":
+                    return 2080;
+                case "Public Relations":
+                    return 2040;
+                case "Recreation":
+                    return 2080;
+                case "Recreation - Recreation Management":
+                    return 2080;
+                case "Recreation - Recreation Therapy":
+                    return 2080;
+                case "Social Science - Prep for Teaching, SS":
+                    return 2080;
+                case "Social Work":
+                    return 2000;
+                case "Sociology":
+                    return 2000;
+                case "Software Engineering":
+                    return 4740;
+                case "Spanish":
+                    return 2040;
+                case "Statistics":
+                    return 2080;
+                case "Television, Radio, Film":
+                    return 2000;
+                case "Theatre Arts":
+                    return 2040;
+                case "Undeclared":
+                    return 2000;
+                default:
+                    return "Major not found";
+            }
+        }
     </script>
 </body>
+
 </html>
